@@ -1,8 +1,8 @@
-using Zenject;
+using Source.Gameplay.Battle.Core;
 using UnityEngine;
-using Source.Battle.Runtime;
+using Zenject;
 
-namespace Source.Battle.Mono
+namespace Source.Gameplay.Battle.Mono
 {
     public abstract class DamageCue : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 // TODO: 接下來實現玩家與敵人身上的血量類別
 
-namespace Source.Battle.Runtime
+namespace Source.Gameplay.Battle.Core
 {
     public interface IDamageDealer
     {

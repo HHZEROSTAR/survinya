@@ -1,6 +1,6 @@
-using Source.Battle.Runtime;
+using Source.Gameplay.Battle.Core;
 
-namespace Source.Battle.Mono
+namespace Source.Gameplay.Battle.Mono
 {
     public class EnemyDamageCue : DamageCue
     {

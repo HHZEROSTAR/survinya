@@ -1,5 +1,5 @@
+using Source.Gameplay.Battle.Core;
 using Zenject;
-using Source.Battle.Runtime;
 
 namespace Source.Battle.Installer
 {
