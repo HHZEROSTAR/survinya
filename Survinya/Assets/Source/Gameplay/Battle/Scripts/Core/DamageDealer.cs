@@ -1,29 +1,34 @@
-using UnityEngine;
+using Zenject;
 
-// TODO: 接下來實現玩家與敵人身上的血量類別
-
-namespace Source.Gameplay.Battle.Core
+namespace Gameplay.Battle.Core
 {
     public interface IDamageDealer
     {
-        void DealDamage(int health);
+        void DealDamage(int damage);
     }
 
     // TODO: 實現傷害邏輯，預計使用 Service 來處理
+    // 現階段沒有使用 Service 是因為對象都足夠簡單
+    // 未來如果扯上工廠的話，一些中介層就有必要了
+    // 以及其他複雜的架構需要重新思考
 
     public class PlayerDamageDealer : IDamageDealer
     {
-        public void DealDamage(int health)
+        [Inject] private IPlayerHealth playerHealth;
+
+        public void DealDamage(int damage)
         {
-            Debug.Log($"Take {health} Damage on Player!!");
+            playerHealth.SetHealth(playerHealth.GetHealth() - damage);
         }
     }
 
     public class EnemyDamageDealer : IDamageDealer
     {
-        public void DealDamage(int health)
+        [Inject] private IEnemyHealth enemyHealth;
+
+        public void DealDamage(int damage)
         {
-            Debug.Log($"Take {health} Damage on Enemy!!");
+            enemyHealth.SetHealth(enemyHealth.GetHealth() - damage);
         }
     }
 }

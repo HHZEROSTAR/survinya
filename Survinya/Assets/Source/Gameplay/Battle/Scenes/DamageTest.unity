@@ -290,7 +290,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &517546785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,7 +821,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5C0D\u6575\u4EBA\u9020\u6210\u50B7\u5BB3"
+  m_Text: Enemy
 --- !u!222 &1203726957
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1300,7 +1300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5C0D\u73A9\u5BB6\u9020\u6210\u50B7\u5BB3"
+  m_Text: Player
 --- !u!222 &1771957115
 CanvasRenderer:
   m_ObjectHideFlags: 0
