@@ -1,5 +1,6 @@
 using Zenject;
 using Gameplay.Stat.Init;
+using Gameplay.Stat.System;
 
 namespace GameplayTest.Stat.Installer
 {
@@ -7,7 +8,8 @@ namespace GameplayTest.Stat.Installer
     {
         public override void InstallBindings()
         {
-            Container.Bind<IInitializable>().To<EntityInit>().AsSingle();
+            Container.Bind(typeof(IInitializable)).To<EntityInit>().AsSingle();
+            Container.Bind(typeof(ITickable)).To<EntityDamageSystem>().AsSingle();
         }
     }
 }

@@ -1,3 +1,4 @@
+using UniRx;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -20,6 +21,16 @@ namespace Gameplay.Stat.Mono
             }
 
             return default(T);
+        }
+
+        public ReactiveProperty<int> Health { get; private set; } = new ReactiveProperty<int>(0);
+
+        public void SetAttribute(string attribute, int value)
+        {
+            if (attribute == "Health")
+            {
+                Health.Value = value;
+            }
         }
     }
 }
