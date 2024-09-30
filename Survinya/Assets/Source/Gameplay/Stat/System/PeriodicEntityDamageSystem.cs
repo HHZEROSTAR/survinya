@@ -3,7 +3,7 @@ using Gameplay.Stat.Mono;
 
 namespace Gameplay.Stat.System
 {
-    public class EntityDamageSystem : ITickable
+    public class PeriodicEntityDamageSystem : ITickable
     {
         private const string PLAYER_ENTITY_ID = "UNIT_PLAYER_0000";
         private const string ENEMY_ENTITY_ID  = "UNIT_ENEMY_0000";
