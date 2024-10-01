@@ -32,5 +32,12 @@ namespace Gameplay.Stat.Mono
                 Health.Value = value;
             }
         }
+
+        public void TakeDamage(float damage)
+        {
+            var currentHealth = Health.Value;
+            var newHealth     = Mathf.Max(0, currentHealth - Mathf.RoundToInt(damage));
+            Health.Value = newHealth;
+        }
     }
 }

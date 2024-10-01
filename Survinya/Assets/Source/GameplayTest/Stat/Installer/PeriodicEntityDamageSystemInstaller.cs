@@ -4,7 +4,7 @@ using Gameplay.Stat.System;
 
 namespace GameplayTest.Stat.Installer
 {
-    public class StatAndDamageSystemInstaller : MonoInstaller
+    public class PeriodicEntityDamageSystemInstaller : MonoInstaller
     {
         public override void InstallBindings()
         {
