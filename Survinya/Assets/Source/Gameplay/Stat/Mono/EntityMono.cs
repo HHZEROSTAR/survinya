@@ -1,43 +1,44 @@
-using UniRx;
+using Zenject;
 using UnityEngine;
-using System.Collections.Generic;
+using Gameplay.Stat.Core;
+using Gameplay.Stat.Interfaces;
 
 namespace Gameplay.Stat.Mono
 {
-    public class EntityMono : MonoBehaviour
+    public class EntityMono : MonoBehaviour, IEntity
     {
-        private readonly Dictionary<string, object> attributes = new Dictionary<string, object>();
+        [SerializeField] private int m_InitialHealth = 100;
+        [SerializeField] private int m_InitialLevel  = 1;
 
-        public void SetAttribute(string key, object value)
-        {
-            attributes[key] = value;
-        }
+        [Inject] private IStatsService statService;
 
-        public T GetAttribute<T>(string key)
+        private EntityState state;
+
+        public int     MaxHealth => state.MaxHealth;
+        public int     Health    => state.CurrentHealth;
+        public int     Level     => state.CurrentLevel;
+
+        private void Awake()
         {
-            if (attributes.TryGetValue(key, out var value))
+            state = new EntityState
             {
-                return (T)value;
-            }
-
-            return default(T);
+                MaxHealth      = m_InitialHealth,
+                CurrentHealth  = m_InitialHealth,
+                CurrentLevel   = m_InitialLevel,
+            };
         }
 
-        public ReactiveProperty<int> Health { get; private set; } = new ReactiveProperty<int>(0);
-
-        public void SetAttribute(string attribute, int value)
+        public void TakeDamage(int damage)
         {
-            if (attribute == "Health")
-            {
-                Health.Value = value;
-            }
+            statService.ApplyDamage(this, damage);
         }
 
-        public void TakeDamage(float damage)
+        public void LevelUp()
         {
-            var currentHealth = Health.Value;
-            var newHealth     = Mathf.Max(0, currentHealth - Mathf.RoundToInt(damage));
-            Health.Value = newHealth;
+            statService.LevelUp(this);
         }
+
+        public void SetHealth(int health) => state.CurrentHealth = health;
+        public void SetLevel(int level) => state.CurrentLevel = level;
     }
 }
