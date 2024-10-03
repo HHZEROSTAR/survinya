@@ -135,9 +135,8 @@ GameObject:
   - component: {fileID: 916911019889000805}
   - component: {fileID: 1675226415429567526}
   - component: {fileID: 2723562272801644953}
-  - component: {fileID: 5968245757652201459}
+  - component: {fileID: 5114373287659236969}
   - component: {fileID: 7950700081483330829}
-  - component: {fileID: 936176188624438680}
   - component: {fileID: 2895449040817964257}
   m_Layer: 0
   m_Name: Unit
@@ -244,8 +243,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &5968245757652201459
-BoxCollider2D:
+--- !u!58 &5114373287659236969
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -279,17 +278,7 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 1
 --- !u!114 &7950700081483330829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,18 +291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb0c585cdb9e484d994eec91537fc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &936176188624438680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6355734041415162543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c331a0ff8bb9205419dbe0854bac83b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_InitialHealth: 100
+  m_InitialLevel: 1
+  m_SearchRadius: 5
 --- !u!114 &2895449040817964257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,8 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _components:
   - {fileID: 7950700081483330829}
-  - {fileID: 936176188624438680}
-  _identifier: 'UNIT_[CAMP]_[IDENTIFY]'
+  _identifier: '[TYPE]_[CAMP]'
   _useSceneContext: 1
   _context: {fileID: 0}
   _bindType: 0
