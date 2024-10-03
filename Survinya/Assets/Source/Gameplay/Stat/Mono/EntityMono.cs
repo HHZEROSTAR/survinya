@@ -9,7 +9,7 @@ namespace Gameplay.Stat.Mono
     public class EntityMono : MonoBehaviour, IEntity
     {
         [SerializeField] private int m_InitialHealth = 100;
-        [SerializeField] private int m_InitialLevel  = 1;
+        [SerializeField] private int m_InitialLevel = 1;
         [SerializeField] private float m_SearchRadius = 5f;
 
         [Inject] private IStatsService statService;
@@ -17,9 +17,9 @@ namespace Gameplay.Stat.Mono
 
         private EntityState state;
 
-        public int     MaxHealth => state.MaxHealth;
-        public int     Health    => state.CurrentHealth;
-        public int     Level     => state.CurrentLevel;
+        public int MaxHealth => state.MaxHealth;
+        public int Health => state.CurrentHealth;
+        public int Level => state.CurrentLevel;
         public Vector2 Position => transform.position;
         public float SearchRadius => m_SearchRadius;
 
@@ -27,9 +27,9 @@ namespace Gameplay.Stat.Mono
         {
             state = new EntityState
             {
-                MaxHealth      = m_InitialHealth,
-                CurrentHealth  = m_InitialHealth,
-                CurrentLevel   = m_InitialLevel,
+                MaxHealth = m_InitialHealth,
+                CurrentHealth = m_InitialHealth,
+                CurrentLevel = m_InitialLevel,
                 NearbyEntities = new List<IEntity>()
             };
         }

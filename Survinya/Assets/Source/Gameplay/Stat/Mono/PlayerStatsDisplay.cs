@@ -8,7 +8,7 @@ namespace Gameplay.Stat.Mono
     public class PlayerStatsDisplay : MonoBehaviour
     {
         [SerializeField] private Image m_HealthBar;
-        [SerializeField] private Text  m_HealthText;
+        [SerializeField] private Text m_HealthText;
 
         private const string PLAYER_ID = "UNIT_PLAYER";
 
@@ -23,7 +23,7 @@ namespace Gameplay.Stat.Mono
         private void DisplayHealth()
         {
             m_HealthBar.fillAmount = (float)player.Health / player.MaxHealth;
-            m_HealthText.text      = $"{player.Health} / {player.MaxHealth}";
+            m_HealthText.text = $"{player.Health} / {player.MaxHealth}";
         }
     }
 }
