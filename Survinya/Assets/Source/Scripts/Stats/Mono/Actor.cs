@@ -100,14 +100,4 @@ namespace Survinya.Stats.Mono
         protected virtual IActor GetNearestEnemy() { return null; }
         protected virtual List<IActor> GetNearbyEnemies() { return null; }
     }
-
-    public class ActorState
-    {
-        public int CurrentHealth { get; set; }
-        public int MaxHealth { get; set; }
-        public int CurrentExperience { get; set; }
-        public int MaxExperience { get; set; }
-        public int CurrentLevel { get; set; }
-        public int MaxLevel { get; set; }
-    }
 }
