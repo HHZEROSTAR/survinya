@@ -1,5 +1,6 @@
 using Zenject;
 using UnityEngine;
+using Survinya.Stats.Core;
 using System.Collections.Generic;
 
 namespace Survinya.Stats.Mono
@@ -108,14 +109,5 @@ namespace Survinya.Stats.Mono
         public int MaxExperience { get; set; }
         public int CurrentLevel { get; set; }
         public int MaxLevel { get; set; }
-    }
-
-    public interface IActorService
-    {
-        void Register(IActor actor);
-        void Unregister(IActor actor);
-        IActor GetNearestActor(IActor actor);
-        List<IActor> GetNearbyActors(IActor actor, float f);
-        IActor GetPlayer();
     }
 }
