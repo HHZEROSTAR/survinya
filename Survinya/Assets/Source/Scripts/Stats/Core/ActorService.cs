@@ -55,10 +55,4 @@ namespace Survinya.Stats.Core
             return _actorRegistry.GetActors().Find(actor => actor is APlayer);
         }
     }
-
-    public interface IActorSpatial
-    {
-        List<IActor> GetNearbyActors(IActor self, List<IActor> getActorsWithoutSelf, float searchRadius);
-        IActor GetNearestActor(IActor self, List<IActor> getActorsWithoutSelf);
-    }
 }
