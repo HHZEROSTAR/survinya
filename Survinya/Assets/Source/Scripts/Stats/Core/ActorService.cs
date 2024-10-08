@@ -56,13 +56,6 @@ namespace Survinya.Stats.Core
         }
     }
 
-    public class ActorRegistry
-    {
-        public void Register(IActor actor) {}
-        public void Unregister(IActor actor) {}
-        public List<IActor> GetActors() { return null; }
-    }
-
     public interface IActorSpatial
     {
         List<IActor> GetNearbyActors(IActor self, List<IActor> getActorsWithoutSelf, float searchRadius);
