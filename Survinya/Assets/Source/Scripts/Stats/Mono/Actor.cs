@@ -33,7 +33,10 @@ namespace Survinya.Stats.Mono
 
         protected ActorState state;
 
-        protected virtual void InitializeState() {}
+        protected virtual void InitializeState()
+        {
+            state = new ActorState();
+        }
 
         private void Awake()
         {
