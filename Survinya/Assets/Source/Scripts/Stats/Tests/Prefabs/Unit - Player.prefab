@@ -124,6 +124,18 @@ PrefabInstance:
       propertyPath: _identifier
       value: UNIT_PLAYER_0000
       objectReference: {fileID: 0}
+    - target: {fileID: 6122909915066787800, guid: dd3b8406291a6e8478c3ac839f65b237, type: 3}
+      propertyPath: _identifier
+      value: UNIT_PLAYER
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122909915066787800, guid: dd3b8406291a6e8478c3ac839f65b237, type: 3}
+      propertyPath: _components.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122909915066787800, guid: dd3b8406291a6e8478c3ac839f65b237, type: 3}
+      propertyPath: '_components.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2533793272930515750}
     - target: {fileID: 6355734041415162543, guid: dd3b8406291a6e8478c3ac839f65b237, type: 3}
       propertyPath: m_Name
       value: Unit - Player
@@ -141,5 +153,28 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 9146556639390247207, guid: dd3b8406291a6e8478c3ac839f65b237, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6355734041415162543, guid: dd3b8406291a6e8478c3ac839f65b237, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 2533793272930515750}
   m_SourcePrefab: {fileID: 100100000, guid: dd3b8406291a6e8478c3ac839f65b237, type: 3}
+--- !u!1 &3147463142133328505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6355734041415162543, guid: dd3b8406291a6e8478c3ac839f65b237, type: 3}
+  m_PrefabInstance: {fileID: 8329991774602096854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2533793272930515750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147463142133328505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e4ae458eea4f8cadd77a89f2d7c6ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InitialHealth: 100
+  m_InitialLevel: 1
+  m_SearchRadius: 0.5

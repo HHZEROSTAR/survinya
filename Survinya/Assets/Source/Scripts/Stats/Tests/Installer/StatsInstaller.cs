@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Stats.Tests.Installer
+namespace Survinya.Stats.Tests.Installer
 {
     public class StatsInstaller : MonoInstaller
     {

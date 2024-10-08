@@ -267,6 +267,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2533793272930515750, guid: 78a16239abcadfb429727924f562f13c, type: 3}
+      propertyPath: m_SearchRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3147463142133328505, guid: 78a16239abcadfb429727924f562f13c, type: 3}
       propertyPath: m_Name
       value: Unit - Player
@@ -325,11 +329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9161331906094395827, guid: 78a16239abcadfb429727924f562f13c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.53
       objectReference: {fileID: 0}
     - target: {fileID: 9161331906094395827, guid: 78a16239abcadfb429727924f562f13c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9161331906094395827, guid: 78a16239abcadfb429727924f562f13c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -881,6 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2144362085}
   - component: {fileID: 2144362084}
+  - component: {fileID: 2144362086}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -901,7 +906,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 2144362086}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -934,6 +940,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2144362086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144362082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f95999e1636ffb4fa9587ccbb574a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -2,9 +2,8 @@ using Zenject;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Stats.Mono
+namespace Survinya.Stats.Mono
 {
-    [RequireComponent(typeof(Text))]
     public class PlayerStatsDisplay : MonoBehaviour
     {
         [SerializeField] private Image m_HealthBar;
@@ -12,7 +11,7 @@ namespace Stats.Mono
         private const string PLAYER_ID = "UNIT_PLAYER";
 
         [Inject(Id = PLAYER_ID)]
-        private EntityMono player;
+        private APlayer _player;
 
         private void Update()
         {
@@ -21,13 +20,7 @@ namespace Stats.Mono
 
         private void DisplayHealth()
         {
-            m_HealthBar.fillAmount = (float)player.Health / player.MaxHealth;
+            m_HealthBar.fillAmount = (float)_player.State.CurrentHealth / _player.State.MaxHealth;
         }
-    }
-
-    public class EntityMono
-    {
-        public float Health { get; set; }
-        public float MaxHealth { get; set; }
     }
 }
