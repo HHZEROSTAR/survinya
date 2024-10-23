@@ -1,7 +1,10 @@
+using System;
 using Zenject;
 using UnityEngine;
+using System.Collections;
 using Survinya.Stat.Core;
 using System.Collections.Generic;
+using UniRx;
 
 namespace Survinya.Stat.Mono
 {
@@ -20,6 +23,7 @@ namespace Survinya.Stat.Mono
         string Name { get; }
         ActorState State { get; }
         bool IsDead { get; set; }
+        bool IsInvincible { get; set; }
         bool IsInRange(Vector2 position, float range);
         void TakeDamage(int damage);
     }
@@ -34,6 +38,7 @@ namespace Survinya.Stat.Mono
         public string Name => name;
         public ActorState State => state;
         public bool IsDead { get; set; }
+        public bool IsInvincible { get; set; }
 
         public bool IsInRange(Vector2 position, float range)
         {
@@ -78,11 +83,21 @@ namespace Survinya.Stat.Mono
 
         public virtual void TakeDamage(int damage)
         {
-            Debug.Log($"{Name} takes {damage} damage");
             if (ModifyHealth(-damage) <= 0)
             {
                 OnDeath();
             }
+        }
+
+        private void CoolDown(float duration, Action onComplete)
+        {
+            StartCoroutine(CoolDownRoutine(duration, onComplete));
+        }
+
+        private static IEnumerator CoolDownRoutine(float duration, Action onComplete)
+        {
+            yield return new WaitForSeconds(duration);
+            onComplete?.Invoke();
         }
 
         protected virtual void OnDeath()

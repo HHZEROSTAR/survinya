@@ -35,10 +35,6 @@ namespace Survinya.Stat.Mono
         {
             base.MeleeAttack(range, meleeDamage);
             var player = GetPlayer();
-            if (player.IsDead)
-            {
-                return;
-            }
             if (player.IsInRange(transform.position, range))
             {
                 player.TakeDamage(meleeDamage);
@@ -92,7 +88,7 @@ namespace Survinya.Stat.Mono
             // Do melee attack when the player is in range
 
             const float meleeRange  = 3f;
-            const int   meleeDamage = 1;
+            const int   meleeDamage = 10;
             MeleeAttack(meleeRange, meleeDamage);
 
             // Do another attack system here

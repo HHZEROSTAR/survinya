@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 namespace Survinya.Stat.Mono
@@ -35,7 +37,21 @@ namespace Survinya.Stat.Mono
 
         public override void TakeDamage(int damage)
         {
+            // 如果正在死亡或無敵，直接返回不處理傷害
+            if (IsDead || IsInvincible) return;
+
             base.TakeDamage(damage);
+
+            IsInvincible = true;
+
+            // 使用 UniRx 的 Observable.Timer 來處理延遲
+            Observable.Timer(TimeSpan.FromSeconds(1f))
+                .Subscribe(_ =>
+                {
+                    IsInvincible = false;
+                })
+                .AddTo(this); // 確保物件被銷毀時，訂閱也會被清理
+
             // TODO: Implement player death
         }
 
