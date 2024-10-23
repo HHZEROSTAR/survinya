@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace Survinya.Stats.Mono
+namespace Survinya.Stat.Mono
 {
     public class APlayer : Actor
     {
@@ -32,7 +33,7 @@ namespace Survinya.Stats.Mono
             base.Update();
         }
 
-        protected override void TakeDamage(int damage)
+        public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);
             // TODO: Implement player death
@@ -41,6 +42,8 @@ namespace Survinya.Stats.Mono
         protected override void OnDeath()
         {
             base.OnDeath();
+            IsDead = true;
+            Debug.Log("Player is dead");
             // TODO: Implement after player death
         }
 

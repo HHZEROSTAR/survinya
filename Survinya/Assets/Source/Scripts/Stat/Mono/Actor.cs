@@ -1,9 +1,9 @@
 using Zenject;
 using UnityEngine;
-using Survinya.Stats.Core;
+using Survinya.Stat.Core;
 using System.Collections.Generic;
 
-namespace Survinya.Stats.Mono
+namespace Survinya.Stat.Mono
 {
     public enum ActorType
     {
@@ -19,6 +19,9 @@ namespace Survinya.Stats.Mono
         Vector2 Position { get; }
         string Name { get; }
         ActorState State { get; }
+        bool IsDead { get; set; }
+        bool IsInRange(Vector2 position, float range);
+        void TakeDamage(int damage);
     }
 
     public class Actor : MonoBehaviour, IActor
@@ -30,6 +33,12 @@ namespace Survinya.Stats.Mono
         public Vector2 Position => transform.position;
         public string Name => name;
         public ActorState State => state;
+        public bool IsDead { get; set; }
+
+        public bool IsInRange(Vector2 position, float range)
+        {
+            return Vector2.Distance(Position, position) <= range;
+        }
 
         protected ActorState state;
 
@@ -65,8 +74,11 @@ namespace Survinya.Stats.Mono
             return state.CurrentLevel;
         }
 
-        protected virtual void TakeDamage(int damage)
+        protected virtual void MeleeAttack(float range, int meleeDamage) {}
+
+        public virtual void TakeDamage(int damage)
         {
+            Debug.Log($"{Name} takes {damage} damage");
             if (ModifyHealth(-damage) <= 0)
             {
                 OnDeath();

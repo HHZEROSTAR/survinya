@@ -1,7 +1,7 @@
+using Survinya.Stat.Mono;
 using System.Collections.Generic;
-using Survinya.Stats.Mono;
 
-namespace Survinya.Stats.Core
+namespace Survinya.Stat.Core
 {
     public class ActorRegistry
     {

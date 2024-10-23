@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2723562272801644953, guid: dd3b8406291a6e8478c3ac839f65b237, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2895449040817964257, guid: dd3b8406291a6e8478c3ac839f65b237, type: 3}
       propertyPath: _identifier
       value: UNIT_PLAYER
@@ -175,6 +179,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e4ae458eea4f8cadd77a89f2d7c6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InitialHealth: 100
-  m_InitialLevel: 1
-  m_SearchRadius: 0.5

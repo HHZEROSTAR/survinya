@@ -1,8 +1,8 @@
-using Zenject;
-using Survinya.Stats.Mono;
 using System.Collections.Generic;
+using Survinya.Stat.Mono;
+using Zenject;
 
-namespace Survinya.Stats.Core
+namespace Survinya.Stat.Core
 {
     public interface IActorService
     {

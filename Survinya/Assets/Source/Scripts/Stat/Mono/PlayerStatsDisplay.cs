@@ -2,7 +2,7 @@ using Zenject;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Survinya.Stats.Mono
+namespace Survinya.Stat.Mono
 {
     public class PlayerStatsDisplay : MonoBehaviour
     {

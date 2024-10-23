@@ -1,4 +1,4 @@
-namespace Survinya.Stats.Core
+namespace Survinya.Stat.Core
 {
     public class ActorState
     {

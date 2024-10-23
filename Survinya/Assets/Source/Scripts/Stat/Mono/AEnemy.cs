@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace Survinya.Stats.Mono
+namespace Survinya.Stat.Mono
 {
     public class AEnemy : Actor
     {
@@ -26,9 +27,25 @@ namespace Survinya.Stats.Mono
         protected override void Update()
         {
             base.Update();
+
+            AttackSystem();
         }
 
-        protected override void TakeDamage(int damage)
+        protected override void MeleeAttack(float range, int meleeDamage)
+        {
+            base.MeleeAttack(range, meleeDamage);
+            var player = GetPlayer();
+            if (player.IsDead)
+            {
+                return;
+            }
+            if (player.IsInRange(transform.position, range))
+            {
+                player.TakeDamage(meleeDamage);
+            }
+        }
+
+        public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);
             // TODO: Implement enemy death
@@ -68,6 +85,17 @@ namespace Survinya.Stats.Mono
         protected override List<IActor> GetNearbyEnemies()
         {
             return null; // Don't need to find nearby enemies
+        }
+
+        private void AttackSystem()
+        {
+            // Do melee attack when the player is in range
+
+            const float meleeRange  = 3f;
+            const int   meleeDamage = 1;
+            MeleeAttack(meleeRange, meleeDamage);
+
+            // Do another attack system here
         }
     }
 }

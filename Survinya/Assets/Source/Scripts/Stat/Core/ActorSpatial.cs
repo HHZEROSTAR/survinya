@@ -1,9 +1,9 @@
-using System.Linq;
 using UnityEngine;
-using Survinya.Stats.Mono;
+using System.Linq;
+using Survinya.Stat.Mono;
 using System.Collections.Generic;
 
-namespace Survinya.Stats.Core
+namespace Survinya.Stat.Core
 {
     public interface IActorSpatial
     {
